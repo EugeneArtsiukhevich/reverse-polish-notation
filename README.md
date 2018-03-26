@@ -11,13 +11,9 @@ The return value should be value after arithmetic operations.
 ### IMPORTANT NOTES
 
 If the argument passed in is array of a operand, then the method should return the same operand.
-If the argument passed in is array without operands, then method should return:
+If the argument passed in is array without operands or operators, then method should return:
 ```javascript
-   {error: "You've missed operands"}
-```
-If the argument passed in is array without operators, then method should return:
-```javascript
-   {error: "You've missed operators"}
+   {error: "Wrong expression"}
 ```
 
 ### For example:
@@ -27,8 +23,9 @@ If the argument passed in is array without operators, then method should return:
   evaluateRPN(["2", "1", "+", "3", "*"])  --> 9
   evaluateRPN(["4", "13", "5", "/", "+"])  --> 6
   evaluateRPN(["2", "3", "4", "*", "+"])  --> 14
-  evaluateRPN(["3", "2"])  --> {error: "You've missed operators"}
-  evaluateRPN(["-", "/"])  --> {error: "You've missed operands"}
+  evaluateRPN(["3", "2"])  --> {error: "Wrong expression"}
+  evaluateRPN(["-", "/"])  --> {error: "Wrong expression"}
+  evaluateRPN(["*", "2"," 2"])  --> {error: "Wrong expression"}
   evaluateRPN([["2", "1", "|"])  --> {error: "You've used unknown operator"}
   evaluateRPN(["2", "0", "/"])  --> {error: "Division by zero"}
 ```
