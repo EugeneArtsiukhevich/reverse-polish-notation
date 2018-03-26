@@ -10,11 +10,19 @@ The return value should be value after arithmetic operations.
 
 ### IMPORTANT NOTES
 
-If the argument passed in is array of a operand, then the method should return the same operand.
 If the argument passed in is array without operands or operators, then method should return:
 ```javascript
    {error: "Wrong expression"}
 ```
+If the argument passed in is array with uknown operator, then method should return:
+```javascript
+   {error: "You used unknown operator"}
+```
+If we have division by zero, then method should return:
+```javascript
+   {error: "Division by zero"}
+```
+
 
 ### For example:
 ```javascript
@@ -26,7 +34,7 @@ If the argument passed in is array without operands or operators, then method sh
   evaluateRPN(["3", "2"])  --> {error: "Wrong expression"}
   evaluateRPN(["-", "/"])  --> {error: "Wrong expression"}
   evaluateRPN(["*", "2"," 2"])  --> {error: "Wrong expression"}
-  evaluateRPN([["2", "1", "|"])  --> {error: "You've used unknown operator"}
+  evaluateRPN([["2", "1", "|"])  --> {error: "You used unknown operator"}
   evaluateRPN(["2", "0", "/"])  --> {error: "Division by zero"}
 ```
 ![Reverse Polish Sausage](./images/rps.png)
