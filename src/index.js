@@ -1,3 +1,3 @@
-module.exports = function evaluateRPN(mainRoad, sideStreets, distanceToWork, averageSpeed, timeToMeeting) {
+module.exports = function evaluateRPN(arr) {
     // Your code goes here!
 }
